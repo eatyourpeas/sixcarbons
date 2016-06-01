@@ -7,7 +7,7 @@ If you are trying to work out a glucose requirement to include milk intake and i
 Specialised Infant Formula composition values are taken from:
 > Additional Information for Health Professionals March 2013, Authors: Susan Westland and Helen Crawley ISBN 978-1-908924-08-7
 
-See it in action: [www.sixcarbons.xyz](www.sixcarbons.xyz)
+See it in action: [www.sixcarbons.xyz](http://www.sixcarbons.xyz)
 
 ##### License
 MIT
