@@ -1,13 +1,50 @@
 @import "{}/node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
+.position-relative { position: relative; }
 
 .header {
   color: #333;
 }
 
+.pickerRed {
+  @extend .form-control;
+  outline-color: red;
+  background-color: red;
+  color: white;
+}
+
+.picker {
+  @extend .form-control;
+  background-color: white;
+  outline-color: white;
+  color: black;
+}
+
+
 h1 {
   color: red;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  padding-bottom: 20px;
 }
+
+h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+}
+ #mainTitle {
+   text-align: center;
+ }
+
+ #mainSubTitle {
+   text-align: center;
+ }
+
+ #landingImage {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+ }
 
 #mgkgmin {
   color: red;
@@ -18,4 +55,163 @@ h1 {
   max-height: 150px;
   padding: 20px;
   float: right;
+}
+
+.result {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  font-size: 18pt;
+}
+
+footer{
+  padding-top: 20px;
+}
+
+#logo {
+  max-width: 45px;
+  max-height: auto;
+  float:none;
+  padding: 0px;
+}
+
+#datesEntry{
+  padding-bottom: 20px;
+}
+
+#title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  font-size: 10pt;
+  padding-bottom: 20px;
+}
+
+.table > thead {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  font-size: 10pt;
+  padding-bottom: 20px;
+  color: black;
+  line-height: 50px;
+  border-bottom: 3px solid red;
+}
+
+tr.selectedBlocks {
+  border-top: 2px solid black;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  font-size: 10pt;
+}
+
+tr.weightRow {
+  border: 3px solid red;
+  border-bottom: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 10pt;
+  color: red;
+}
+
+tr.noWeightRow {
+  border: 3px solid red;
+  border-bottom: 3px solid red;
+  border-left: 0px;
+  border-right: 0px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 10pt;
+  color: red;
+}
+
+tr.weightUpper {
+  border-style: hidden;
+  border-bottom: 3px solid red;
+  background-color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 10pt;
+  color: red;
+}
+
+.disclaimer {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  font-size: 10pt;
+  color: gray;
+  padding-top: 50px;
+}
+
+
+$bgDefault      : #ff0000;
+$bgHighlight    : #ffffff;
+$colDefault     : #ffffff;
+$colHighlight   : #000000;
+$dropDown       : true;
+.navbar-default {
+  background-color: $bgDefault;
+  border-color: $bgHighlight;
+  .navbar-brand {
+    color: $colDefault;
+    &:hover, &:focus {
+      color: $colHighlight; }}
+  .navbar-text {
+    color: $colDefault; }
+  .navbar-nav {
+    > li {
+      > a {
+        line-height: 40px;
+        font-size: 24pt;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 100;
+        color: $colDefault;
+        &:hover,  &:focus {
+          color: $colHighlight; }}
+      @if $dropDown {
+        > .dropdown-menu {
+          background-color: $bgDefault;
+          > li {
+            > a {
+              color: $colDefault;
+              &:hover,  &:focus {
+                color: $colHighlight;
+                background-color: $bgHighlight; }}
+            > .divider {
+              background-color: $bgHighlight;}}}}}
+    @if $dropDown {
+      .open .dropdown-menu > .active {
+        > a, > a:hover, > a:focus {
+          color: $colHighlight;
+          background-color: $bgHighlight; }}}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}
+    > .open {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+  .navbar-toggle {
+    border-color: $bgHighlight;
+    &:hover, &:focus {
+      background-color: $bgHighlight; }
+    .icon-bar {
+      background-color: $colDefault; }}
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $colDefault; }
+  .navbar-link {
+    color: $colDefault;
+    &:hover {
+      color: $colHighlight; }}}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu {
+    > li > a {
+      color: $colDefault;
+      &:hover, &:focus {
+        color: $colHighlight; }}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
 }

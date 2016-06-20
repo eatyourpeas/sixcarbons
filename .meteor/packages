@@ -24,3 +24,6 @@ fourseven:scss
 http
 reactive-dict
 underscore
+kadira:flow-router
+kadira:blaze-layout
+momentjs:moment

@@ -1,0 +1,21 @@
+
+<head>
+  <link rel="icon" sizes="16x16 32x32" href="/glucoseredicon.ico">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/font-awesome-4.6.3/css/font-awesome.min.css">
+
+  <title>sixcarbons</title>
+</head>
+<template name='main'>
+  <body>
+    <div class='container'>
+      {{> applicationLayout}}
+    </div>
+  </body>
+</template>
+
+<template name="applicationLayout">
+  {{> Template.dynamic template=navbar}}
+  {{> Template.dynamic template=main}}
+  {{> Template.dynamic template=footer}}
+</template>

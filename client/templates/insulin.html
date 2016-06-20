@@ -1,0 +1,201 @@
+<template name="insulin">
+  <div class="container">
+
+    <div class="row">
+      <div class='col-md-8 col-xs-8'>
+          <h3> Create time blocks, increase and decrease rates, merge blocks for a Medtronic insulin pump. </h3>
+      </div>
+      <div class = 'col-md-4 col-xs-4'>
+        <img src='/glucose.png' id="glucose">
+      </div>
+    </div>
+    <div class="row">
+      <form class="form-inline" id='schedule'>
+        <div class='col-md-12 col-xs-12'>
+          <table class="table table-default">
+            <thead>
+              <td>Time Block</td>
+              <td>Start</td>
+              <td>End</td>
+              <td>Rate (Units/hr)</td>
+              <td>Total Hours (Hrs)</td>
+              <td>Total Units (U)</td>
+              <td></td>
+            </thead>
+            <tbody>
+              {{#each timeblock in timeblocks}}
+                {{> datesEntry thistimeblock = timeblock}}
+              {{/each}}
+            </tbody>
+            <tfoot>
+              {{#if isVisible}}
+              <tr class="selectedBlocks">
+                <td>Selected Blocks</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>{{selectedTotalHours}} Hrs</td>
+                <td>{{selectedTotalUnits}} U</td>
+                {{#if thereAreMoreThanTwoBlocks }}
+                  <td><button class="btn btn-default" id='mergetimeblocks'><span><i class='fa fa-link' title = 'Merge Time Blocks'></i></span></button></td>
+                {{else}}
+                  <td></td>
+                {{/if}}
+              </tr>
+              {{/if}}
+              <tr class={{weightClass}}>
+                <td>Total Basal Insulin</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>{{totalHoursUsed}} Hrs</td>
+                <td>{{totalBasalRate}} U/day</td>
+                <td></td>
+              </tr>
+              {{ #if weightIsEntered }}
+                <tr class="weightUpper">
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>{{totalBasalRatePerKg}} U/kg/day</td>
+                  <td></td>
+                </tr>
+              {{/if}}
+              </tfoot>
+          </table>
+
+
+            <div class="form-group">
+              <label for="weight">Weight of child</label>
+              <input type="text" class="form-control" id="weight" placeholder="kg">
+            </div>
+            <button type='submit' class="btn btn-default" id='weightButton'>Submit</button>
+
+        </div>
+      </form>
+    </div>
+    <div class="row">
+      <div class="disclaimer">
+        <small>PLEASE NOTE THIS APP IS IN DEVELOPMENT AND SHOULD NOT BE RELIED UPON TO PRODUCE ACCURATE RESULTS</small>
+      </div>
+    </div>
+  </div>
+
+</template>
+
+<template name='datesEntry'>
+  <tr id='datesEntry'>
+    <td>
+      <div class="checkbox">
+        <label class="css-label"><input type="checkbox" name={{thistimeblock.timeblock}} id="timeblockSelect" {{isChecked}} class='css-checkbox'></label>
+      </div>
+    </td>
+    <td>
+      <div class="form-group">
+        <label for="timefrom"></label>
+        <select name={{thistimeblock.timeblock}} id="timefromhourpicker" class={{doDatesMatch}}>
+          <option {{isSelected  "00" 'timefromHours'}}>00</option>
+          <option {{isSelected  "01" 'timefromHours'}}>01</option>
+          <option {{isSelected  "02" 'timefromHours'}}>02</option>
+          <option {{isSelected  "03" 'timefromHours'}}>03</option>
+          <option {{isSelected  "04" 'timefromHours'}}>04</option>
+          <option {{isSelected  "05" 'timefromHours'}}>05</option>
+          <option {{isSelected  "06" 'timefromHours'}}>06</option>
+          <option {{isSelected  "07" 'timefromHours'}}>07</option>
+          <option {{isSelected  "08" 'timefromHours'}}>08</option>
+          <option {{isSelected  "09" 'timefromHours'}}>09</option>
+          <option {{isSelected  "10" 'timefromHours'}}>10</option>
+          <option {{isSelected  "11" 'timefromHours'}}>11</option>
+          <option {{isSelected  "12" 'timefromHours'}}>12</option>
+          <option {{isSelected  "13" 'timefromHours'}}>13</option>
+          <option {{isSelected  "14" 'timefromHours'}}>14</option>
+          <option {{isSelected  "15" 'timefromHours'}}>15</option>
+          <option {{isSelected  "16" 'timefromHours'}}>16</option>
+          <option {{isSelected  "17" 'timefromHours'}}>17</option>
+          <option {{isSelected  "18" 'timefromHours'}}>18</option>
+          <option {{isSelected  "19" 'timefromHours'}}>19</option>
+          <option {{isSelected  "20" 'timefromHours'}}>20</option>
+          <option {{isSelected  "21" 'timefromHours'}}>21</option>
+          <option {{isSelected  "22" 'timefromHours'}}>22</option>
+          <option {{isSelected  "23" 'timefromHours'}}>23</option>
+          <option {{isSelected  "24" 'timefromHours'}}>24</option>
+        </select>
+        :
+        <select name={{thistimeblock.timeblock}} id="timefromminutepicker" class={{doDatesMatch}}>
+          <option {{isSelected  "00" 'timefromMinutes'}}>00</option>
+          <option {{isSelected  "30" 'timefromMinutes'}}>30</option>
+        </select>
+      </div>
+    </td>
+    <td>
+      <div class="form-group">
+        <label for="timeto"></label>
+        <select name={{thistimeblock.timeblock}} id="timetohourpicker" class={{doDatesMatch}}>
+          <option {{isSelected  "00" 'timetoHours'}}>00</option>
+          <option {{isSelected  "01" 'timetoHours'}}>01</option>
+          <option {{isSelected  "02" 'timetoHours'}}>02</option>
+          <option {{isSelected  "03" 'timetoHours'}}>03</option>
+          <option {{isSelected  "04" 'timetoHours'}}>04</option>
+          <option {{isSelected  "05" 'timetoHours'}}>05</option>
+          <option {{isSelected  "06" 'timetoHours'}}>06</option>
+          <option {{isSelected  "07" 'timetoHours'}}>07</option>
+          <option {{isSelected  "08" 'timetoHours'}}>08</option>
+          <option {{isSelected  "09" 'timetoHours'}}>09</option>
+          <option {{isSelected  "10" 'timetoHours'}}>10</option>
+          <option {{isSelected  "11" 'timetoHours'}}>11</option>
+          <option {{isSelected  "12" 'timetoHours'}}>12</option>
+          <option {{isSelected  "13" 'timetoHours'}}>13</option>
+          <option {{isSelected  "14" 'timetoHours'}}>14</option>
+          <option {{isSelected  "15" 'timetoHours'}}>15</option>
+          <option {{isSelected  "16" 'timetoHours'}}>16</option>
+          <option {{isSelected  "17" 'timetoHours'}}>17</option>
+          <option {{isSelected  "18" 'timetoHours'}}>18</option>
+          <option {{isSelected  "19" 'timetoHours'}}>19</option>
+          <option {{isSelected  "20" 'timetoHours'}}>20</option>
+          <option {{isSelected  "21" 'timetoHours'}}>21</option>
+          <option {{isSelected  "22" 'timetoHours'}}>22</option>
+          <option {{isSelected  "23" 'timetoHours'}}>23</option>
+          <option {{isSelected  "24" 'timetoHours'}}>24</option>
+        </select>
+        :
+        <select name={{thistimeblock.timeblock}} id="timetominutepicker" class={{doDatesMatch}}>
+          <option {{isSelected  "00" 'timetoMinutes'}}>00</option>
+          <option {{isSelected  "30" 'timetoMinutes'}}>30</option>
+        </select>
+      </div>
+    </td>
+    <td>
+      <div class="form-group">
+        <label for="rate"></label>
+        <select name = {{thistimeblock.timeblock}} id='rate' class="form-control">
+          {{#each rate in rates}}
+            <option {{isSelectedRate rate}}>{{rate}}</option>
+          {{/each}}
+        </select>
+      </div>
+    </td>
+    <td>
+      {{calculateTotalHours}} Hrs
+    </td>
+    <td>
+      {{ calculateTotalUnits calculateTotalHours }} U
+    </td>
+    <td>
+      {{#if isLastPicker thistimeblock.timeblock}}
+      <button class="btn btn-default" id='insulinAdd' name={{thistimeblock.timeblock}}><span><i class='fa fa-plus-circle' title='Add new time block'></i>
+      </span></button>
+      {{else}}
+        {{#if isFirstBlock}}
+          <button class="btn btn-default" disabled id='insulinDelete' name={{thistimeblock.timeblock}}><span><i class='fa fa-minus-circle' title="Remove time block"></i></span></button>
+        {{else}}
+          <button class="btn btn-default" id='insulinDelete' name={{thistimeblock.timeblock}}><span><i class='fa fa-minus-circle' title="Remove time block"></i></span></button>
+        {{/if}}
+      {{/if}}
+      <button class="btn btn-default" id='increase10' name={{thistimeblock.timeblock}}><span><i class='fa fa-chevron-circle-up' title = 'Increase by 10%'></i></span></button>
+      <button class="btn btn-default" id='decrease10' name={{thistimeblock.timeblock}}><span><i class='fa fa-chevron-circle-down' title = 'Reduce by 10%'></i></span></button>
+    </td>
+  </tr>
+
+</template>
