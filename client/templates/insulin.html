@@ -77,6 +77,9 @@
       </form>
     </div>
     <div class="row">
+      {{>charts}}
+    </div>
+    <div class="row">
       <div class="disclaimer">
         <small>PLEASE NOTE THIS APP IS IN DEVELOPMENT AND SHOULD NOT BE RELIED UPON TO PRODUCE ACCURATE RESULTS</small>
       </div>
@@ -198,4 +201,12 @@
     </td>
   </tr>
 
+</template>
+
+<template name="charts">
+  <div class="container">
+    <div class="chart">
+      <canvas id="myChart" width="1000" height="200"></canvas>
+    </div>
+  </div>
 </template>

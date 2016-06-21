@@ -251,7 +251,6 @@ Template.insulin.helpers({
       }
     }
     Session.set('totalHours', totalhours.toFixed(1));
-    console.log(totalhours.toFixed(1));
     return totalhours.toFixed(1);
   },
   isVisible: function(){
@@ -546,8 +545,6 @@ function checkThisTimeBlockDoesNotEndAfterNext (allblocks, myblock){
       }
     }
     Session.set('timeblock', allblocks);
-
-
   }
 }
 
@@ -611,4 +608,137 @@ function totalUnits(hours, timeblock){
   var totalinsulin = (rate * hours).toFixed(3);
 
   return totalinsulin;
+}
+
+
+/////////////////////////////
+
+
+Template.charts.onRendered(function() {
+    // Get the context of the canvas element we want to select
+    var ctx  = document.getElementById("myChart").getContext("2d");
+  //  var ctx2 = document.getElementById("myChart2").getContext("2d");
+  //  var ctx3 = document.getElementById("myChart3").getContext("2d");
+//    var ctx4 = document.getElementById("myChart4").getContext("2d");
+  //  var ctx5 = document.getElementById("myChart5").getContext("2d");
+//    drawChart();
+
+      Deps.autorun(function () {
+        drawChart(ctx);
+      });
+
+});
+
+
+function blocks(){
+  unitsperhour = [];
+  var blocks = Session.get('timeblock');
+  for (var i = 0; i < blocks.length; i++) {
+    var newBlock = blocks[i];
+    var hours = totalHours(newBlock);
+    for (var j = 0; j < hours; j++) {
+      unitsperhour.push(newBlock.rate);
+    }
+  }
+
+  return unitsperhour;
+}
+
+
+function drawChart(ctx){
+  // Set the options
+  var options = {
+
+      ///Boolean - Whether grid lines are shown across the chart
+      scaleShowGridLines: true,
+
+      //String - Colour of the grid lines
+      scaleGridLineColor: "rgba(0,0,0,.05)",
+
+      //Number - Width of the grid lines
+      scaleGridLineWidth: 1.0,
+
+      //Boolean - Whether to show horizontal lines (except X axis)
+      scaleShowHorizontalLines: true,
+
+      //Boolean - Whether to show vertical lines (except Y axis)
+      scaleShowVerticalLines: true,
+
+      //Boolean - Whether the line is curved between points
+      bezierCurve: false,
+
+      //Number - Tension of the bezier curve between points
+      bezierCurveTension: 0.4,
+
+      //Boolean - Whether to show a dot for each point
+      pointDot: true,
+
+      //Number - Radius of each point dot in pixels
+      pointDotRadius: 4,
+
+      //Number - Pixel width of point dot stroke
+      pointDotStrokeWidth: 1,
+
+      //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+      pointHitDetectionRadius: 20,
+
+      //Boolean - Whether to show a stroke for datasets
+      datasetStroke: true,
+
+      //Number - Pixel width of dataset stroke
+      datasetStrokeWidth: 2,
+
+      //Boolean - Whether to fill the dataset with a colour
+      datasetFill: true,
+
+      //String - A legend template
+      responsive: true,
+      maintainAspectRatio: true,
+      showTooltips: false
+
+  };
+
+  // Set the data
+  var data = {
+      labels: ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"],
+      datasets: [{
+          label: "Pump Basal Rates",
+          fillColor: "rgba(255,00,0,0.2)",
+          strokeColor: "rgba(255,0,0,1)",
+          pointColor: "rgba(255,0,0,1)",
+          pointStrokeColor: "#fff",
+          pointHighlightFill: "#fff",
+          pointHighlightStroke: "rgba(220,220,220,1)",
+          hoverBackgroundColor: "rgba(255,99,132,0.4)",
+            hoverBorderColor: "rgba(255,99,132,1)",
+          data: blocks()
+      }
+
+    ]
+  };
+
+  var mySelectedBlocks = Session.get('selectedTimeBlocks');
+  var blocksArray = Session.get('timeblock');
+
+
+  // draw the charts
+  var myLineChart = new Chart(ctx).Bar(data, options);
+
+  if (mySelectedBlocks.length > 0) {
+    ///blocks have been selectedTimeBlocks
+    for (var i = 0; i < mySelectedBlocks.length; i++) {
+      var newblock = mySelectedBlocks[i];
+      var timeblock = blocksArray[newblock];
+      var lengthOfTimeBlock = totalHours(timeblock);
+      var starthours = parseInt(timeblock.starthours);
+
+      for (var j = starthours; j < starthours + lengthOfTimeBlock; j++) {
+        myLineChart.datasets[0].bars[j].fillColor = "rgba(220,220,220,0.4)";
+        myLineChart.datasets[0].bars[j].strokeColor = "rgba(0,0,0,1)";
+      }
+
+    }
+    myLineChart.update();
+  }
+
 }
