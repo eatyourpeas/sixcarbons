@@ -105,31 +105,9 @@
       <div class="form-group">
         <label for="timefrom"></label>
         <select name={{thistimeblock.timeblock}} id="timefromhourpicker" class={{doDatesMatch}}>
-          <option {{isSelected  "00" 'timefromHours'}}>00</option>
-          <option {{isSelected  "01" 'timefromHours'}}>01</option>
-          <option {{isSelected  "02" 'timefromHours'}}>02</option>
-          <option {{isSelected  "03" 'timefromHours'}}>03</option>
-          <option {{isSelected  "04" 'timefromHours'}}>04</option>
-          <option {{isSelected  "05" 'timefromHours'}}>05</option>
-          <option {{isSelected  "06" 'timefromHours'}}>06</option>
-          <option {{isSelected  "07" 'timefromHours'}}>07</option>
-          <option {{isSelected  "08" 'timefromHours'}}>08</option>
-          <option {{isSelected  "09" 'timefromHours'}}>09</option>
-          <option {{isSelected  "10" 'timefromHours'}}>10</option>
-          <option {{isSelected  "11" 'timefromHours'}}>11</option>
-          <option {{isSelected  "12" 'timefromHours'}}>12</option>
-          <option {{isSelected  "13" 'timefromHours'}}>13</option>
-          <option {{isSelected  "14" 'timefromHours'}}>14</option>
-          <option {{isSelected  "15" 'timefromHours'}}>15</option>
-          <option {{isSelected  "16" 'timefromHours'}}>16</option>
-          <option {{isSelected  "17" 'timefromHours'}}>17</option>
-          <option {{isSelected  "18" 'timefromHours'}}>18</option>
-          <option {{isSelected  "19" 'timefromHours'}}>19</option>
-          <option {{isSelected  "20" 'timefromHours'}}>20</option>
-          <option {{isSelected  "21" 'timefromHours'}}>21</option>
-          <option {{isSelected  "22" 'timefromHours'}}>22</option>
-          <option {{isSelected  "23" 'timefromHours'}}>23</option>
-          <option {{isSelected  "24" 'timefromHours'}}>24</option>
+          {{#each hour in hours}}
+            <option {{isSelected  hour 'timefromHours'}}>{{hour}}</option>
+          {{/each}}
         </select>
         :
         <select name={{thistimeblock.timeblock}} id="timefromminutepicker" class={{doDatesMatch}}>
@@ -143,31 +121,9 @@
       <div class="form-group">
         <label for="timeto"></label>
         <select name={{thistimeblock.timeblock}} id="timetohourpicker" class={{doDatesMatch}}>
-          <option {{isSelected  "00" 'timetoHours'}}>00</option>
-          <option {{isSelected  "01" 'timetoHours'}}>01</option>
-          <option {{isSelected  "02" 'timetoHours'}}>02</option>
-          <option {{isSelected  "03" 'timetoHours'}}>03</option>
-          <option {{isSelected  "04" 'timetoHours'}}>04</option>
-          <option {{isSelected  "05" 'timetoHours'}}>05</option>
-          <option {{isSelected  "06" 'timetoHours'}}>06</option>
-          <option {{isSelected  "07" 'timetoHours'}}>07</option>
-          <option {{isSelected  "08" 'timetoHours'}}>08</option>
-          <option {{isSelected  "09" 'timetoHours'}}>09</option>
-          <option {{isSelected  "10" 'timetoHours'}}>10</option>
-          <option {{isSelected  "11" 'timetoHours'}}>11</option>
-          <option {{isSelected  "12" 'timetoHours'}}>12</option>
-          <option {{isSelected  "13" 'timetoHours'}}>13</option>
-          <option {{isSelected  "14" 'timetoHours'}}>14</option>
-          <option {{isSelected  "15" 'timetoHours'}}>15</option>
-          <option {{isSelected  "16" 'timetoHours'}}>16</option>
-          <option {{isSelected  "17" 'timetoHours'}}>17</option>
-          <option {{isSelected  "18" 'timetoHours'}}>18</option>
-          <option {{isSelected  "19" 'timetoHours'}}>19</option>
-          <option {{isSelected  "20" 'timetoHours'}}>20</option>
-          <option {{isSelected  "21" 'timetoHours'}}>21</option>
-          <option {{isSelected  "22" 'timetoHours'}}>22</option>
-          <option {{isSelected  "23" 'timetoHours'}}>23</option>
-          <option {{isSelected  "24" 'timetoHours'}}>24</option>
+          {{#each hour in hours}}
+            <option {{isSelected  hour 'timetoHours'}}>{{hour}}</option>
+          {{/each}}
         </select>
         :
         <select name={{thistimeblock.timeblock}} id="timetominutepicker" class={{doDatesMatch}}>
@@ -215,6 +171,168 @@
   <div class="container">
     <div class="chart">
       <canvas id="myChart" width="1000" height="200"></canvas>
+    </div>
+  </div>
+</template>
+
+<template name="newpump">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-xs-8">
+        <h3>Set up a new pump</h3>
+      </div>
+      <div class='col-lg-4 col-xs-4'>
+        <img src='/glucose.png' id="glucose">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-xs-4"></div>
+      <form class="form-horizontal col-lg-4 col-md-4 col-xs-4" role='form' id='newPump'>
+
+            <div class="form-group">
+                <label for="age" class="control-label col-lg-4 col-xs-4">Age</label>
+                <div class="col-lg-8 col-xs-8">
+                  <select id="age" class="form-control">
+                    <option>Pre-School</option>
+                    <option>Pre-Teen</option>
+                    <option>Standard</option>
+                    <option>Adult</option>
+                  </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="tdd" class="control-label col-lg-4 col-md-4 col-xs-4">Total Daily Insulin Dose</label>
+                <div class="col-lg-8 col-xs-8">
+                  <input type="number" class="form-control" id="tdd" placeholder="units">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="totalbasal" class="control-label col-lg-4 col-xs-4">Total Units from basal insulin</label>
+                <div class="col-lg-8 col-xs-8">
+                  <input type="number" class="form-control" id="totalbasal" placeholder="units">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="pumpChoice" class="control-label col-lg-4 col-xs-4" id="pumpChoice">Select your pump</label>
+                <div class="col-lg-8 col-xs-8">
+                  <select id="pumpChoice" class="form-control" name='pumpChoice'>
+                      {{#each pump in pumps}}
+                        <option {{selectedPump pump}} >{{pump}}</option>
+                      {{/each}}
+                  </select>
+                </div>
+            </div>
+
+            <HR>
+              <h5 id="instructions">Select typical meal times to create time blocks</h5>
+                  <div class="form-group">
+                      <div class="col-lg-4 col-md-4 col-xs-4">
+                        <label for='breakfast'>Breakfast</label>
+                      </div>
+                      <div class="col-lg-8 col-md-8 col-xs-8">
+                        <div class="input-group pull-right" name='breakfast'>
+                          <div class="col-lg-6 col-md-6 col-xs-6">
+                          <select name="breakfasthours" id="breakfasthours" class="form-control">
+                            {{#each hour in hours}}
+                              <option {{disabled hour}}>{{hour}}</option>
+                              {{/each}}
+                            </select>
+                          </div>
+                          <div class="col-xs-6">
+                            <select name='breakfastminutes' id="breakfastminutes" class="form-control">
+                              {{#each timeInterval in timeIntervals}}
+                                <option>{{timeInterval}}</option>
+                              {{/each}}
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <div class="col-lg-4 col-md-4 col-xs-4">
+                        <label for='lunch'>Lunch</label>
+                      </div>
+                      <div class="col-lg-8 col-md-8 col-xs-8">
+                        <div class="input-group pull-right" name='breakfast'>
+                          <div class="col-lg-6 col-md-6 col-xs-6">
+                          <select name="lunchhours" id="lunchhours" class="form-control">
+                            {{#each hour in hours}}
+                              <option>{{hour}}</option>
+                              {{/each}}
+                            </select>
+                          </div>
+                          <div class="col-xs-6">
+                            <select name='lunchminutes' id="lunchminutes" class="form-control">
+                              {{#each timeInterval in timeIntervals}}
+                                <option>{{timeInterval}}</option>
+                              {{/each}}
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <div class="col-lg-4 col-md-4 col-xs-4">
+                        <label for='tea'>Tea</label>
+                      </div>
+                      <div class="col-lg-8 col-md-8 col-xs-8">
+                        <div class="input-group pull-right" name='tea'>
+                          <div class="col-lg-6 col-md-6 col-xs-6">
+                          <select name="teahours" id="teahours" class="form-control">
+                            {{#each hour in hours}}
+                              <option>{{hour}}</option>
+                              {{/each}}
+                            </select>
+                          </div>
+                          <div class="col-xs-6">
+                            <select name='teaminutes' id="teaminutes" class="form-control">
+                              {{#each timeInterval in timeIntervals}}
+                                <option>{{timeInterval}}</option>
+                              {{/each}}
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <div class="col-lg-4 col-md-4 col-xs-4">
+                        <label for='bed'>Bed</label>
+                      </div>
+                      <div class="col-lg-8 col-md-8 col-xs-8">
+                        <div class="input-group pull-right" name='bed'>
+                          <div class="col-lg-6 col-md-6 col-xs-6">
+                          <select name="bed" id="bedhours" class="form-control">
+                            {{#each hour in hours}}
+                              <option  {{disabledbed hour}}>{{hour}}</option>
+                            {{/each}}
+                            </select>
+                          </div>
+                          <div class="col-xs-6">
+                            <select name='bedminutes' id="bedminutes" class="form-control">
+                              {{#each timeInterval in timeIntervals}}
+                                <option>{{timeInterval}}</option>
+                              {{/each}}
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+
+
+                  <div class="buttonCentral">
+                    <div class="form-group">
+                        <button type='submit' class="btn btn-danger" id='newPumpButton'>Set Up New Pump</button>
+                    </div>
+                  </div>
+
+
+      </form>
     </div>
   </div>
 </template>

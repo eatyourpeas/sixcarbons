@@ -1,15 +1,18 @@
 <template name='navbar'>
-
   <nav class="navbar navbar-default">
-        <!-- Brand -->
+
         <a class="navbar-brand" href="/"><img src="/glucosewhite.png" id='logo'></a>
-        <!-- Links -->
+
         <ul class="nav navbar-nav">
           <li class="nav-item">
             <a class="nav-link" href="/dextrose" >glucose</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/insulin" >insulin</a>
+          <li class="dropdown">
+                <a data-toggle="dropdown" class="dropdown-toggle" href="/insulin">insulin<b class="caret"></b></a>
+                <ul role="menu" class="dropdown-menu">
+                    <li><a href="/insulin">basal rate designer</a></li>
+                    <li><a href="/newpump">set up a new pump</a></li>
+                </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/glucagon" >glucagon</a>
@@ -17,5 +20,4 @@
         </ul>
 
   </nav>
-
 </template>

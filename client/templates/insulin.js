@@ -17,12 +17,14 @@ omniPodRates = [0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6
 danaRates = [0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2, 0.21, 0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.3, 0.31, 0.32, 0.33, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.4, 0.41, 0.42, 0.43, 0.44, 0.45, 0.46, 0.47, 0.48, 0.49, 0.5, 0.51, 0.52, 0.53, 0.54, 0.55, 0.56, 0.57, 0.58, 0.59, 0.6, 0.61, 0.62, 0.63, 0.64, 0.65, 0.66, 0.67, 0.68, 0.69, 0.7, 0.71, 0.72, 0.73, 0.74, 0.75, 0.76, 0.77, 0.78, 0.79, 0.8, 0.81, 0.82, 0.83, 0.84, 0.85, 0.86, 0.87, 0.88, 0.89, 0.9, 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65, 1.7, 1.75, 1.8, 1.85, 1.9, 1.95, 2, 2.05, 2.1, 2.15, 2.2, 2.25, 2.3, 2.35, 2.4, 2.45, 2.5, 2.55, 2.6, 2.65, 2.7, 2.75, 2.8, 2.85, 2.9, 2.95, 3, 3.05, 3.1, 3.15, 3.2, 3.25, 3.3, 3.35, 3.4, 3.45, 3.5, 3.55, 3.6, 3.65, 3.7, 3.75, 3.8, 3.85, 3.9, 3.95, 4, 4.05, 4.1, 4.15, 4.2, 4.25, 4.3, 4.35, 4.4, 4.45, 4.5, 4.55, 4.6, 4.65, 4.7, 4.75, 4.8, 4.85, 4.9, 4.95, 5, 5.05, 5.1, 5.15, 5.2, 5.25, 5.3, 5.35, 5.4, 5.45, 5.5, 5.55, 5.6, 5.65, 5.7, 5.75, 5.8, 5.85, 5.9, 5.95, 6, 6.05, 6.1, 6.15, 6.2, 6.25, 6.3, 6.35, 6.4, 6.45, 6.5, 6.55, 6.6, 6.65, 6.7, 6.75, 6.8, 6.85, 6.9, 6.95, 7, 7.05, 7.1, 7.15, 7.2, 7.25, 7.3, 7.35, 7.4, 7.45, 7.5, 7.55, 7.6, 7.65, 7.7, 7.75, 7.8, 7.85, 7.9, 7.95, 8, 8.05, 8.1, 8.15, 8.2, 8.25, 8.3, 8.35, 8.4, 8.45, 8.5, 8.55, 8.6, 8.65, 8.7, 8.75, 8.8, 8.85, 8.9, 8.95, 9, 9.05, 9.1, 9.15, 9.2, 9.25, 9.3, 9.35, 9.4, 9.45, 9.5, 9.55, 9.6, 9.65, 9.7, 9.75, 9.8, 9.85, 9.9, 9.95, 10, 10.1, 10.2, 10.3, 10.4, 10.5, 10.6, 10.7, 10.8, 10.9, 11, 11.1, 11.2, 11.3, 11.4, 11.5, 11.6, 11.7, 11.8, 11.9, 12, 12.1, 12.2, 12.3, 12.4, 12.5, 12.6, 12.7, 12.8, 12.9, 13, 13.1, 13.2, 13.3, 13.4, 13.5, 13.6, 13.7, 13.8, 13.9, 14, 14.1, 14.2, 14.3, 14.4, 14.5, 14.6, 14.7, 14.8, 14.9, 15];
 cellnovoRates = [0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65, 1.7, 1.75, 1.8, 1.85, 1.9, 1.95, 2, 2.05, 2.1, 2.15, 2.2, 2.25, 2.3, 2.35, 2.4, 2.45, 2.5, 2.55, 2.6, 2.65, 2.7, 2.75, 2.8, 2.85, 2.9, 2.95, 3, 3.05, 3.1, 3.15, 3.2, 3.25, 3.3, 3.35, 3.4, 3.45, 3.5, 3.55, 3.6, 3.65, 3.7, 3.75, 3.8, 3.85, 3.9, 3.95, 4, 4.05, 4.1, 4.15, 4.2, 4.25, 4.3, 4.35, 4.4, 4.45, 4.5, 4.55, 4.6, 4.65, 4.7, 4.75, 4.8, 4.85, 4.9, 4.95, 5];
 
+timeHours = ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24'];
 quarterHourlyIntervals = ['00','15','30','45'];
 hourlyIntervals = ['00'];
 halfHourlyIntervals = ['00', '30'];
 
 pumpChoices = ["Accu-Chek® Spirit Combo (Roche)", "Accu-Chek® Insight (Roche)", "Animas® Vibe ™ (© Animas)", "Paradigm® Veo™ (Medtronic)", "MiniMed 640G (Medtronic)", "Omnipod (Ypsomed Ltd)", "Cellnovo (Cellnovo)"];
 
+temporaryRates = [];
 
 //Cellnovo (Cellnovo): Basal flow rate from 0.05U/ h to 5.0 U/h adjustable in 0.05u increments, programmed in hour by hour time blocks over 24hr period.
 //DANA Diabecare R (Advanced Therapeutics (UK) Ltd) Min: 0.04u/h Max: 16U/h Minimum increment 0.01U/h
@@ -33,31 +35,40 @@ pumpChoices = ["Accu-Chek® Spirit Combo (Roche)", "Accu-Chek® Insight (Roche)"
 //Accu-Chek® Insight (Roche) Min: 0.02 U/h; Max: 25 U/h -1 to 24 hr basal rates, duraton adjustable in units of 15 min, and in increments of 0.01 (up to 1.00 U/h), 0.05 (up to 10.0 U/h) and 0.1 (up to 50.0 U/h).
 //Accu-Chek® Spirit Combo (Roche) Min: 0.05U/h Max:50U/h -24 hourly basal rates, adjustable in unit increments of 0.01 (up to 1.00 U/h), 0.05 (up to 10.0 U/h) and 0.1 (up to 50.0 U/h).
 
-
 Template.insulin.created = function () {
-    // counter starts at 0
 
-    var firstBlock = new TimeBlock();
-    firstBlock.timeblock = 0;
-    firstBlock.rate = 0.025;
-    firstBlock.starthours = "00";
-    firstBlock.startminutes = "00";
-    firstBlock.stophours = "01";
-    firstBlock.stopminutes = "00";
-    var timeblockarray = [];
-    var selectedarray = [];
-    timeblockarray[0] = firstBlock;
-    Session.set('timeblock', timeblockarray);
-    Session.set('selectedTimeBlocks', selectedarray);
-    Session.set('weight', 0);
-    Session.set('totalHours', 0);
-    Session.set('totalUnits', 0);
+    if (temporaryRates.length > 0) {
+      // this is only true is new pump has been set up
+      var selectedarray = [];
+      Session.set('timeblock', temporaryRates);
+      Session.set('selectedTimeBlocks', selectedarray);
+      temporaryRates = []; //reset array
 
-    Session.set('pumpChoice', 'MiniMed 640G (Medtronic)');
-    Session.set('pumpChoices', medtronicRates);
-    Session.set('timeIntervals', halfHourlyIntervals);
+    } else {
+      var firstBlock = new TimeBlock();
+      firstBlock.timeblock = 0;
+      firstBlock.rate = 0.025;
+      firstBlock.starthours = "00";
+      firstBlock.startminutes = "00";
+      firstBlock.stophours = "01";
+      firstBlock.stopminutes = "00";
+      var timeblockarray = [];
+      var selectedarray = [];
+      timeblockarray[0] = firstBlock;
+      Session.set('timeblock', timeblockarray);
+      Session.set('selectedTimeBlocks', selectedarray);
+      Session.set('weight', 0);
+      Session.set('totalHours', 0);
+      Session.set('totalUnits', 0);
 
-  };
+      Session.set('pumpChoice', 'MiniMed 640G (Medtronic)');
+      Session.set('pumpChoices', medtronicRates);
+      Session.set('timeIntervals', halfHourlyIntervals);
+    }
+
+
+
+};
 
 
 Template.insulin.events({
@@ -324,8 +335,44 @@ Template.insulin.helpers({
     var totalHours = Session.get('totalHours');
     return (totalInsulin/weight).toFixed(1);
   },
+  selectedPump: function(parameter){
+    var selectedPump = Session.get('pumpChoice');
+    if (selectedPump == parameter) {
+      return "selected";
+    } else {
+      return "";
+    }
+  },
   pumps: function(){
     return pumpChoices;
+  }
+});
+
+Template.newpump.helpers({
+  pumps: function(){
+    return pumpChoices;
+  },
+  timeIntervals: function(){
+    var pumpChoice = Session.get('pumpChoice');
+    return timeIntervals(pumpChoice);
+  },
+  hours: function(){
+    return timeHours;
+  },
+  disabled: function(timeInterval){
+
+    if (timeInterval == "00" || timeInterval == "01" || timeInterval == "02" || timeInterval == "03" || timeInterval == "04") {
+      return 'disabled';
+    } else {
+      return '';
+    }
+  },
+  disabledbed: function(hour){
+    if (hour == "00") {
+      return 'disabled';
+    } else {
+      return '';
+    }
   },
   selectedPump: function(parameter){
     var selectedPump = Session.get('pumpChoice');
@@ -337,11 +384,72 @@ Template.insulin.helpers({
   }
 });
 
+Template.newpump.created = function(){
+  var pump = Session.get('pumpChoice');
+  var selectedarray = [];
+  var timeblockarray = [];  
+  Session.set('timeblock', timeblockarray);
+  Session.set('selectedTimeBlocks', selectedarray);
+  Session.set('weight', 0);
+  Session.set('totalHours', 0);
+  Session.set('totalUnits', 0);
+  if (pump === undefined ) {
+    Session.set('pumpChoice', 'MiniMed 640G (Medtronic)');
+    Session.set('pumpChoices', medtronicRates);
+    Session.set('timeIntervals', halfHourlyIntervals);
+  }
+
+
+};
+
+Template.newpump.events({
+  'change #age': function(){
+    Session.set('age', event.target.value);
+  },
+  'change #pumpChoice': function(){
+    Session.set('pumpChoice', event.target.value);
+  },
+  'submit #newPump': function(){
+    event.preventDefault();
+    var age = event.target.age.value;
+    var tdd = event.target.tdd.value;
+    var tbr = event.target.totalbasal.value;
+    var pumpChoice = event.target.pumpChoice.value;
+
+    if (tdd === "" || tbr === "") {
+      return;
+    }
+
+    var bfHours = event.target.breakfasthours.value;
+    var bfMinutes = event.target.breakfastminutes.value;
+    var lunchHours = event.target.lunchhours.value;
+    var lunchMinutes = event.target.lunchminutes.value;
+    var teaHours = event.target.teahours.value;
+    var teaMinutes = event.target.teaminutes.value;
+    var bedHours = event.target.bedhours.value;
+    var bedMinutes = event.target.bedminutes.value;
+    var timeblockarray = createNewPumpProfile(age, tdd, tbr, pumpChoice, bfHours, bfMinutes, lunchHours, lunchMinutes, teaHours, teaMinutes, bedHours, bedMinutes);
+
+    var timeblocks = Session.get('timeblock');
+    timeblocks = timeblockarray;
+    temporaryRates = timeblocks;
+
+    FlowRouter.go('/insulin', {
+      'timeblock': timeblocks
+    });
+
+  }
+});
+
 Template.datesEntry.helpers({
 
   rates: function(){
     var rates = Session.get('pumpChoices');
     return rates;
+  },
+
+  hours: function(){
+    return timeHours;
   },
 
   doDatesMatch: function(){
@@ -377,7 +485,7 @@ Template.datesEntry.helpers({
         if (previousBlock.stophours != starthours || parseInt(previousBlock.stopminutes) != startminutes) {
           return 'pickerRed';
         }
-/*
+        /*
         if (timeblockId < numberOfTimeBlocks-1) {
           //there are timeblocks after mine
           var nextBlock = timeblocks[timeblockId +1];
@@ -385,7 +493,7 @@ Template.datesEntry.helpers({
               return 'pickerRed';
           }
         }
-*/
+        */
       }
     }
     if (starthours > stophours) {
@@ -415,9 +523,9 @@ Template.datesEntry.helpers({
       timetocompare = this.thistimeblock.starthours;
     } else if (picker == 'timefromMinutes') {
       timetocompare = this.thistimeblock.startminutes;
-    } else if (picker = 'timetoHours') {
+    } else if (picker == 'timetoHours') {
       timetocompare = this.thistimeblock.stophours;
-    } else if (picker = 'timetoMinutes') {
+    } else if (picker == 'timetoMinutes') {
       timetocompare = this.thistimeblock.stopminutes
     }
 
@@ -508,6 +616,8 @@ Template.datesEntry.events({
   }
 });
 
+
+//////////////////////// functions
 
 function pickerChange(event){
   var timetoevent = event.target.value;
@@ -715,6 +825,129 @@ function timeIntervals(chosenPump){
   return timeIntervals;
 }
 
+function createNewPumpProfile(age, tdd, tbr, pumpChoice, bfHours, bfMinutes, lunchHours, lunchMinutes, teaHours, teaMinutes, bedHours, bedMinutes){
+  // Bill Lambs algorithm here
+  var pumpTDD = 0;
+  var block0004 = 0; //only adults
+  var block00bf = 0; //only children
+  var block04bf = 0;
+  var blockbflunch = 0;
+  var blocklunchtea = 0;
+  var blockteabed = 0;
+  var blockbed24 = 0;
+
+  var timeblockarray = [];
+
+  //set basal based on age
+
+  if (age == 'Pre-School') {
+    pumpTDD = tdd * 0.95;
+  }
+  if (age == 'Pre-Teen') {
+    pumpTDD = tdd * 0.85;
+  }
+  if (age == 'Standard') {
+    pumpTDD = tdd * 0.75;
+  }
+  if (age == 'Adult') {
+    pumpTDD = tdd * 0.75;
+  }
+
+  var intervals = Session.get('pumpChoices');
+
+  var basalDose = (pumpTDD / 2)/24;
+
+  // set time blocks based on age and calculated basal
+
+  if (age == 'Pre-School') {
+    var block00bf = basalDose * 0.8;
+    var blockbflunch = basalDose * 1.1;
+    var blocklunchtea = basalDose;
+    var blockteabed = basalDose;
+    var blockbed24 = basalDose * 0.9;
+  }
+  if (age == 'Pre-Teen') {
+    var block00bf = basalDose * 0.8;
+    var blockbflunch = basalDose * 1.15;
+    var blocklunchtea = basalDose;
+    var blockteabed = basalDose * 1.1;
+    var blockbed24 = basalDose * 0.9;
+  }
+  if (age == 'Standard') {
+    var block00bf = basalDose * 0.8;
+    var blockbflunch = basalDose * 1.2;
+    var blocklunchtea = basalDose;
+    var blockteabed = basalDose * 1.1;
+    var blockbed24 = basalDose * 0.8;
+  }
+  if (age == 'Adult') {
+    var block0004 = basalDose * 0.8;
+    var block04bf = basalDose * 0.9;
+    var blockbflunch = basalDose * 1.2;
+    var blocklunchtea = basalDose;
+    var blockteabed = basalDose * 1.1;
+    var blockbed24 = basalDose * 0.8;
+  }
+
+
+  var nightBlock = new TimeBlock(); // ONLY ADULTS
+  var morningBlock = new TimeBlock(); // ONLY CHILDREN
+  var bfBlock = new TimeBlock();
+  var lunchBlock = new TimeBlock();
+  var teaBlock = new TimeBlock();
+  var bedBlock = new TimeBlock();
+
+  // apply to both adults and children
+
+    bfBlock.starthours = bfHours; bfBlock.startminutes = bfMinutes;
+    bfBlock.stophours = lunchHours; bfBlock.stopminutes = lunchMinutes;
+    bfBlock.rate = closest(intervals, blockbflunch);
+
+    lunchBlock.starthours = lunchHours; lunchBlock.startminutes = lunchMinutes;
+    lunchBlock.stophours = teaHours; lunchBlock.stopminutes = teaMinutes;
+    lunchBlock.rate = closest(intervals, blocklunchtea);
+
+    teaBlock.starthours = teaHours; teaBlock.startminutes = teaMinutes;
+    teaBlock.stophours = bedHours; teaBlock.stopminutes = bedMinutes;
+    teaBlock.rate = closest(intervals, blockteabed);
+
+    bedBlock.starthours = bedHours; bedBlock.startminutes = bedMinutes;
+    bedBlock.stophours = "24"; bedBlock.stopminutes = "00";
+    bedBlock.rate = closest(intervals, blockbed24);
+
+  if (age != "Adult") {
+    nightBlock.starthours = "00"; nightBlock.startminutes="00";
+    nightBlock.stophours = bfHours; nightBlock.stopminutes = bfMinutes;
+    nightBlock.rate = closest(intervals, block00bf);
+    nightBlock.timeblock = 0;
+    bfBlock.timeblock = 1;
+    lunchBlock.timeblock = 2;
+    teaBlock.timeblock = 3;
+    bedBlock.timeblock = 4;
+
+    timeblockarray = [nightBlock, bfBlock, lunchBlock, teaBlock, bedBlock];
+
+  } else {
+    nightBlock.starthours = "00"; nightBlock.startminutes = "00";
+    nightBlock.stophours = "04"; nightBlock.stopminutes = "00";
+    nightBlock.rate = closest(intervals, block0004);
+    nightBlock.timeblock = 0;
+
+    morningBlock.starthours = "04"; morningBlock.startminutes = "00";
+    morningBlock.stophours = bfHours; morningBlock.stopminutes = bfMinutes;
+    morningBlock.rate = closest(intervals, block04bf);
+    morningBlock.timeblock = 1;
+
+    bfBlock.timeblock = 2;
+    lunchBlock.timeblock = 3;
+    teaBlock.timeblock = 4;
+    bedBlock.timeblock = 5;
+
+    timeblockarray = [nightBlock, morningBlock, bfBlock, lunchBlock, teaBlock, bedBlock];
+  }
+
+  return timeblockarray;
+}
 
 /////////////////////////////
 
@@ -870,6 +1103,4 @@ function drawChart(ctx){
     }
     myLineChart.update();
   }
-
-
 }
