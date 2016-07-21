@@ -64,6 +64,7 @@ Template.insulin.created = function () {
       Session.set('pumpChoice', 'MiniMed 640G (Medtronic)');
       Session.set('pumpChoices', medtronicRates);
       Session.set('timeIntervals', halfHourlyIntervals);
+      Session.set('clipboardVisible', false);
     }
 
 
@@ -235,6 +236,14 @@ Template.insulin.events({
   'change #pumpChoice': function(){
       Session.set('pumpChoice', event.target.value);
       matchRatesTo(event.target.value);
+  },
+  'click #clipboardButton': function(){
+    var clipboardVisible = Session.get('clipboardVisible');
+    if (clipboardVisible) {
+      Session.set('clipboardVisible', false);
+    } else {
+      Session.set('clipboardVisible', true);
+    }
   }
 
 });
@@ -387,7 +396,7 @@ Template.newpump.helpers({
 Template.newpump.created = function(){
   var pump = Session.get('pumpChoice');
   var selectedarray = [];
-  var timeblockarray = [];  
+  var timeblockarray = [];
   Session.set('timeblock', timeblockarray);
   Session.set('selectedTimeBlocks', selectedarray);
   Session.set('weight', 0);
@@ -616,7 +625,40 @@ Template.datesEntry.events({
   }
 });
 
+Template.clipboard.helpers({
+  'clipboardtext': function(){
+    var timeblocks = Session.get('timeblock');
+    var returnString = '';
+    for (var i = 0; i < timeblocks.length; i++) {
+      var thistimeblock = timeblocks[i];
+      returnString = returnString + thistimeblock.starthours+':'+thistimeblock.startminutes+' - '+thistimeblock.stophours+':'+thistimeblock.stopminutes+'  '+thistimeblock.rate+' U/h'+'\n';
+    }
+    returnString = returnString + 'Total Basal Insulin: '+Session.get('totalUnits')+' units\n';
+    return returnString;
+  },
+  'isVisible': function(){
+    var clipboardVisible = Session.get('clipboardVisible');
+    if (clipboardVisible) {
+      return '';
+    } else {
+      return "display: none";
+    }
+  },
+  'isMacintosh': function(){
+    if (isMacintosh()){
+      return true;
+    } else {
+      return false;
+    }
+  }
+});
 
+Template.clipboard.events({
+  'click #selectAllButton': function(event, template){
+    var textarea = template.find('#clipboardtextarea');
+    textarea.select();
+  }
+});
 //////////////////////// functions
 
 function pickerChange(event){
@@ -1103,4 +1145,13 @@ function drawChart(ctx){
     }
     myLineChart.update();
   }
+}
+
+
+function isMacintosh() {
+  return navigator.platform.indexOf('Mac') > -1
+}
+
+function isWindows() {
+  return navigator.platform.indexOf('Win') > -1
 }

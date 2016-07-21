@@ -71,6 +71,9 @@
               <input type="text" class="form-control col-lg-8 col-xs-8" id="weight" placeholder="kg">
               <button type='submit' class="btn btn-default" id='weightButton'>Submit</button>
           </div>
+          <div class="col-lg-2 col-xs-2">
+            <button type='submit' class="btn btn-default" id='clipboardButton'>View Summary</button>
+          </div>
           <div class="form-group pull-right col-lg-5 col-xs-5">
             <label for="pumpChoice" class="col-lg-4 col-xs-4">Select your pump</label>
             <select id="pumpChoice" class="form-control col-lg-8 col-xs-8" name='pumpChoice'>
@@ -83,6 +86,9 @@
       </form>
     </div>
     <div class="row">
+      {{>clipboard}}
+    </div>
+    <div class="row">
       {{>charts}}
     </div>
     <div class="row">
@@ -92,6 +98,24 @@
     </div>
   </div>
 
+</template>
+
+<template name='clipboard'>
+  <div class="container">
+    <div class="row col-lg-12 col-xs-12" style="padding-bottom: 10px; padding-top: 10px;">
+      <textarea id='clipboardtextarea' class="form-control" rows="5" style={{isVisible}}>{{clipboardtext}}</textarea>
+    </div>
+    <div class='row col-lg-12 col-xs-12'>
+      <div class="col-lg-6 col-xs-6">
+        <button type='submit' class="btn btn-default" id='selectAllButton' style={{isVisible}}><i class="fa fa-clipboard" aria-hidden="true"></i> Select All</button>
+        {{#if isMacintosh}}
+          <label style={{isVisible}}>Press &#8984;+C to copy to the clipboard</label>
+        {{else}}
+          <label style={{isVisible}}>Press Ctrl+C to copy to the clipboard</label>
+        {{/if}}
+      </div>
+    </div>
+  </div>
 </template>
 
 <template name='datesEntry'>
