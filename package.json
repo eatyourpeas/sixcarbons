@@ -5,7 +5,8 @@
     "start": "meteor run"
   },
   "dependencies": {
-    "bootstrap-sass": "^3.3.6",
+    "@babel/runtime": "^7.0.0-beta.38",
+    "bootstrap-sass": "^3.3.7",
     "meteor-node-stubs": "~0.2.0"
   }
 }

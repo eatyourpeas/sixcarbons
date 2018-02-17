@@ -13,5 +13,8 @@ If you sit in clinic and fiddle with insulin pumps, it is often helpful to know 
 
 See it in action: [www.sixcarbons.xyz](www.sixcarbons.xyz)
 
+###### *HbA1c Converter and estimated average glucose calculator*
+Convert the HbA1c between mmol/mol (IFCC) and percentage (DCCT), and calculate the estimated average glucose.
+
 ##### License
 MIT

@@ -1,0 +1,57 @@
+<template name='convert'>
+  <div class="container">
+    <div class="row">
+      <div class='col-md-8 col-xs-8'>
+        <h3> Convert HbA1c and calculate estimated average glucose</h3>
+      </div>
+      <div class = 'col-md-4 col-xs-4'>
+        <img src='/glucose.png' id="glucose">
+      </div>
+    </div>
+    <div class="row">
+      <div class='col-md-6 col-xs-12'>
+      <form>
+            <div class="form-group">
+              <div class='col-md-6 col-xs-6'>
+                <label for="percentage">%</label>
+                <input type="text" class="form-control" id="percentage" placeholder="%" value={{percent}}>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class='col-md-6 col-xs-6'>
+                <label for="mmol">mmol/mol</label>
+                <input type="text" class="form-control" id="mmol" placeholder="mmol/mol" value={{mmol}}>
+              </div>
+            </div>
+            {{#if isVisible}}
+              <div class="form-group">
+                <div class='col-md-12 col-xs-12'>
+                  <label>estimated average glucose</label>
+                </div>
+                <div class='col-md-6 col-xs-6'>
+                  <H5 id="eag_mmol">{{eag_mmol}}</H5>
+                </div>
+                <div class='col-md-6 col-xs-6'>
+                  <h5 id="eag_mgdl">{{eag_mgdl}}</h5>
+                </div>
+              </div>
+              <div class='col-md-12 col-xs-12'>
+                <button type="submit" class="btn btn-default">Clear</button>
+              </div>
+            {{/if}}
+
+      </form>
+      </div>
+    </div>
+    <div class="row">
+      <hr>
+      <h5><a href="http://care.diabetesjournals.org/content/diacare/early/2008/06/07/dc08-0545.full.pdf">Translating the A1C Assay Into Estimated Average Glucose Values, Nathan et al., DIABETES CARE, VOLUME 31, NUMBER 8, AUGUST 2008</a></h5>
+      <h5><a href="https://professional.diabetes.org/sites/professional.diabetes.org/files/media/editorial.pdf">Translating the A1C Assay, Kahn & Fonseca, DIABETES CARE, VOLUME 31, NUMBER 8, AUGUST 2008</a></h5>
+    </div>
+    <div class="row">
+      <div class="disclaimer">
+        <small>PLEASE NOTE THIS APP IS IN DEVELOPMENT AND SHOULD NOT BE RELIED UPON TO PRODUCE ACCURATE RESULTS</small>
+      </div>
+    </div>
+  </div>
+</template>
